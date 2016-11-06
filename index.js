@@ -16,17 +16,15 @@ app.get('/', function(request, response) {
 
 app.get('/getsteps/:token', function(req, res) {
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + req.params.token;
-          axios.get('https://api.fitbit.com/1/user/-/activities/date/2016-11-05.json', {})
-                  .then(function (response) {
-                    res.json({steps:response.data.summary.steps});
-                  })
-                  .catch(function (error) {
-                    res.send({error: 'epic'})
-                  });
+    axios.get('https://api.fitbit.com/1/user/-/activities/date/2016-11-05.json', {})
+      .then(function (response) {
+        res.json({steps:response.data.summary.steps});
+      })
+      .catch(function (error) {
+        res.send({error: 'epic'})
+      });
 });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-
