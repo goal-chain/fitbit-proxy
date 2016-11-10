@@ -16,7 +16,7 @@ app.get('/', function(request, response) {
 
 app.get('/getsteps/:token', function(req, res) {
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + req.params.token;
-    axios.get('https://api.fitbit.com/1/user/-/activities/date/2016-11-05.json', {})
+    axios.get(`https://api.fitbit.com/1/user/-/activities/date/${moment().format('YYYY-MM-DD')}.json`, {})
       .then(function (response) {
         res.json({steps:response.data.summary.steps});
       })

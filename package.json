@@ -2,10 +2,7 @@
   "name": "fitbit-proxy",
   "version": "1.0.0",
   "description": "",
-  "license": "MIT"
-  "engines": {
-    "node": "5.9.1"
-  },
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -13,6 +10,7 @@
   "dependencies": {
     "axios": "^0.15.2",
     "ejs": "2.4.1",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "moment": "^2.16.0"
   }
 }
